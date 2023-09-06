@@ -50,9 +50,42 @@ body {
 #log {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-bottom: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: blue;
   color: white;
+  margin-left: 10%;
+  font-family: Courier new;
+}
+
+#a1 {
+  color: green;
+  font-size: 20px;
+  text-decoration: none;
+  margin-left: 10%;
+
+}
+
+#sub-container span {
+  color: black;
+  font-size: 20px;
+  margin: 0% 0% 0% 20%;
+}
+
+
+
+
+#a2 {
+  color: green;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: Comic sans;
+}
+
+
+i {
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  color: green;
 }

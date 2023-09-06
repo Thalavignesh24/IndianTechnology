@@ -1,0 +1,28 @@
+body {
+    background-color: lightgreen;
+}
+
+#header {
+    background-color: red;
+    margin: 5%;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px
+}
+
+#sub-header h1 {
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+}
+
+#container {
+    background-color: skyblue;
+    margin: 5%;
+    width: 300px;
+    height: 550px;
+    border-radius: 10px
+}
+
+#sub-container {
+    padding: 50px 0px 0px 50px;
+}
