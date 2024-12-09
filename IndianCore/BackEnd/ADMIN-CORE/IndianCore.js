@@ -16,6 +16,12 @@ tool.use(bodyParser.urlencoded({ extended: true }));
 tool.use("/api/admin/indcore", deviceRouter);
 
 
+
+
+
+
 tool.listen(2408, () => {
   console.log(`Server Started And Connected To... ${Config.PORT.SERVER_PORT}`)
+
+
 })
