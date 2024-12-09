@@ -15,6 +15,6 @@ tool.use(bodyParser.urlencoded({ extended: true }));
 tool.use("/api/admin/indcore",deviceRouter);
 
 
-tool.listen(2408,()=>{
+tool.listen(2025,()=>{
   console.log("Server Started...")
 })
