@@ -3,6 +3,8 @@ import HeaderContent from "./components/deviceComponent.jsx";
 import HomeContent from "./components/homePageComponent.jsx";
 import MainContent from "./components/mainPageComponent.jsx";
 
+//import FindMyDeviceInfo from "./components/FIND-MY-DEVICE-INFO-STATUS.jsx";
+
 
 import { Routes, Route } from "react-router-dom";
 
@@ -13,6 +15,7 @@ function App() {
         <Route path="main" element={<MainContent />} />
         <Route path="home" element={<HomeContent />} />
         <Route path="device" element={<HeaderContent/>} />
+      
       </Routes>
     </div>
   );
