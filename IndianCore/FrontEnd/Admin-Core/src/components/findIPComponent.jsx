@@ -15,7 +15,9 @@ const ipDetect=async()=>{
         
         if (match) {
           const myIP = match[0];
-          if(myIP === openApiIP.query){
+          console.log("myIP====> ",myIP);
+          console.log("IpQuery====> ",openApiIP?.["query"])
+          if(myIP === openApiIP?.["query"]){
             document.getElementById("publicIP").innerHTML="Public IP: "+myIP;
           }
           else{
@@ -34,6 +36,7 @@ const ipDetect=async()=>{
 let openAPI=async()=>{
   const response = await fetch(`https://pro.ip-api.com/json?key=bCAcN6DNTXuTPnM`);
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
