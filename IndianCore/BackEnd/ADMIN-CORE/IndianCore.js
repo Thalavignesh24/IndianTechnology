@@ -16,5 +16,5 @@ tool.use("/api/admin/indcore",deviceRouter);
 
 
 tool.listen(2025,()=>{
-  console.log("Server Started...")
+  console.log(`Server Started...`)
 })
