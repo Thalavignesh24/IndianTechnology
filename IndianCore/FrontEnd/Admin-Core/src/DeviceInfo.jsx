@@ -20,34 +20,14 @@ function deviceInfo() {
 
         <div id="ClickEvent">
           <Routes>
-            <Route path="findmyip" element={<FindMyDeviceInfoContent />} />
-            {/* <Route path="home" element={<HomeContent />} />
-        <Route path="device" element={<HeaderContent/>} /> */}
-
+            <Route path="find-ip" element={<FindMyDeviceInfoContent />} />
+            <Route path="find-incognito" element={<IncognitoDeviceInfoContent />} />
+            <Route path="find-bot" element={<BotDeviceInfoContent />} />
+            {/* <Route path="findmyip" element={<FindMyDeviceInfoContent />} /> */}
           </Routes>
         </div>
 
-        <div>
-          <IncognitoDeviceInfoContent title="IncognitoMode Detector" />
-        </div>
-
-        <div>
-          <BotDeviceInfoContent
-            title="Bot Detector"
-            name="I'm Robot: "
-          />
-        </div>
-
-        <div>
-          <EmailLookup />
-        </div>
-
-        <div>
-          <PhoneLookup />
-        </div>
-
       </div>
-
 
     </div>
   )
