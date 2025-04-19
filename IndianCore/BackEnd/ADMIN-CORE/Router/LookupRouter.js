@@ -17,4 +17,18 @@ TargetRouter.post("/email-data",
   return lookupController.emailLookup(request, response,error);
 });
 
+TargetRouter.post("/phone-data",
+[
+  [
+    body("phone.code","Invalid Phone Code").trim().isNumeric().isLength({min:2,max:3}),
+    body("phone.number","Invalid Phone Number").trim().isNumeric().isLength({min:10,max:15})
+  ]
+],
+
+(request, response) => {
+  let error = validationResult(request);
+  return lookupController.phoneLookup(request, response,error);
+});
+
+
 module.exports = TargetRouter;
