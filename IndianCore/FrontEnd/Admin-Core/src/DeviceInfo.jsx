@@ -1,9 +1,14 @@
 
-import FindMyDeviceInfoContent from "./components/findIPComponent.jsx";
+import FindMyDeviceInfoContent from "./components/deviceComponent.jsx";
+import FindMyIPInfoContent from "./components/findIPComponent.jsx";
+
 import IncognitoDeviceInfoContent from "./components/incognitoModeDetect.jsx";
+
 import BotDeviceInfoContent from "./components/botDetection.jsx";
+
 import EmailLookup from "./components/emailLookup.jsx";
-import { PhoneLookup } from "./components/phoneLookup.jsx";
+
+import PhoneLookup from "./components/phoneLookup.jsx";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -20,10 +25,18 @@ function deviceInfo() {
 
         <div id="ClickEvent">
           <Routes>
-            <Route path="find-ip" element={<FindMyDeviceInfoContent />} />
+            <Route path="info" element={<FindMyDeviceInfoContent />} />
+            
             <Route path="find-incognito" element={<IncognitoDeviceInfoContent />} />
+            
             <Route path="find-bot" element={<BotDeviceInfoContent />} />
-            {/* <Route path="findmyip" element={<FindMyDeviceInfoContent />} /> */}
+            
+            <Route path="find-ip" element={<FindMyIPInfoContent />} />
+            
+            <Route path="find-email" element={<EmailLookup />} />
+            
+              <Route path="find-phone" element={<PhoneLookup />} />
+            
           </Routes>
         </div>
 
