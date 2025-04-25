@@ -47,7 +47,7 @@
   font-weight: bold;
 }
 
-#dropDown{
+.dropDown{
   width:100%;
   border:1px solid #ccc;
   padding: 12px 20px;

@@ -22,6 +22,7 @@ const PhoneLookup = () => {
   
   const verifyPhone=async ()=>{
     let code = document.getElementById("code").value;
+    
     await axios.post("http://127.0.0.1:2408/api/admin/indcore/phone-data",{
       "phone": {
         "code":code,
@@ -29,7 +30,8 @@ const PhoneLookup = () => {
     }
     }).then((res)=>{
       setUsers(res.data);
-      setInputValue('')
+      setInputValue('');
+      document.getElementById("code").value="";
     })
   }
   
@@ -39,8 +41,8 @@ const PhoneLookup = () => {
             <h1 id="title" align="center">PHONE NUMBER VERIFICATION</h1>
           </div>
           <div className="container">
-      <select id="dropDown">
-        <option>Select Phone Code</option>
+      <select id="code" className="dropDown">
+        <option value="">Select Phone Code</option>
         <option value="91">+91 India</option>
         <option value="44">+44 United Kingdon</option>
       </select>  
