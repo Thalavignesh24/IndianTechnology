@@ -24,6 +24,7 @@ const EmailLookup = () => {
         });
         setUserData(res.data);
         setInputValue('');
+        
       } catch (error) {
         console.error("Error fetching email data:", error);
       }
@@ -56,13 +57,20 @@ const EmailLookup = () => {
           <ul>
               <p id="lookupKey">{`${key}:`}</p>
             {Object.entries(value).map(([subKey, subValue]) => (
-              <li key={subKey}>{`${subKey}: ${subValue}`}</li>
+             
+              <li key={subKey}>
+                <span id="value-key">                {`${subKey}`}: </span>
+                <span id="value-field">
+                  {`${subValue}`}
+                </span>
+</li>
+
             ))}
           </ul>
         ) :
         
         (
-          <p>{`${key} : ${value}`}</p>
+          <p><span id="keys">{`${key}`} :</span> {`${value}`}</p>
         )}
       </div>
     ))

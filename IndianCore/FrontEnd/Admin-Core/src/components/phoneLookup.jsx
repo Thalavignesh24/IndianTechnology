@@ -44,7 +44,7 @@ const PhoneLookup = () => {
       <select id="code" className="dropDown">
         <option value="">Select Phone Code</option>
         <option value="91">+91 India</option>
-        <option value="44">+44 United Kingdon</option>
+        <option value="44">+44 United Kingdom</option>
       </select>  
     <input type="number" name="inputPhone" id="input-box"
         value={inputPhone}
@@ -65,13 +65,21 @@ const PhoneLookup = () => {
           <ul>
               <p id="lookupKey">{`${key}:`}</p>
             {Object.entries(value).map(([subKey, subValue]) => (
-              <li key={subKey}>{`${subKey}: ${subValue}`}</li>
+            
+              <li key={subKey}>
+                <span id="value-key">                {`${subKey}`}: </span>
+                <span id="value-field">
+                  {`${subValue}`}
+                </span>
+</li>
+              
+              
             ))}
           </ul>
         ) :
         
         (
-          <p>{`${key} : ${value}`}</p>
+ <p><span id="keys">{`${key}`} :</span> {`${value}`}</p>
         )}
       </div>
     ))
