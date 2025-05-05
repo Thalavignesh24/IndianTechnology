@@ -9,7 +9,10 @@ import ".././designs/Lookup.css";
 
 const EmailLookup = () => {
   const [inputValue, setInputValue] = useState('');
+  
   const [userData, setUserData] = useState(null);
+  
+  const [valid,validCheck]=useState("");
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -19,11 +22,19 @@ const EmailLookup = () => {
     alert(inputValue)
     if (inputValue) {
       try {
+        if(!inputValue){
+          validCheck("Email Should Not Empty")
+          alert(valid);
+          return
+        }
         const res = await axios.post("http://127.0.0.1:2408/api/admin/indcore/email-data", {
           email: inputValue,
         });
-        setUserData(res.data);
+      
+      
+        setUserData(res.data)
         setInputValue('');
+        
         
       } catch (error) {
         console.error("Error fetching email data:", error);
@@ -47,6 +58,8 @@ const EmailLookup = () => {
         />
         <br /><br />
         <button name="checkEmail" id="sub-button" onClick={inputData}>Verify</button>
+        
+        <p>{valid}</p>
         
 <div id="data">
   {userData?.data?.emailRequestId && (
