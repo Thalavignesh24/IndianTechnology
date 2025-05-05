@@ -18,7 +18,11 @@ const lookupController = {
         return helper.sendFailureMessage(response,
         validator?.["errors"][0]?.["msg"],
         422,
-        {});
+        {
+          code:422,
+          "message":validator?.["errors"][0]?.["msg"],
+        }
+        );
       }
       let inputEmail = request?.["body"]?.["email"];
       let emailData = await emailLookupModel.findOne({"emailValue":inputEmail},{_id:0,__v:0});

@@ -9,8 +9,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/indian-core/*" element={<App />} />
-        <Route path="/indian-core/device/*" element={<DeviceInfo />} />
+        <Route path="/ind-core/*" element={<App />} />
+        <Route path="/ind-core/device/*" element={<DeviceInfo />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
