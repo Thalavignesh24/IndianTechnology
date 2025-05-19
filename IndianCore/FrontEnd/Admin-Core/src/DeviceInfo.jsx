@@ -26,17 +26,17 @@ function deviceInfo() {
         <div id="ClickEvent">
           <Routes>
             <Route path="info" element={<FindMyDeviceInfoContent />} />
-            
+
             <Route path="find-incognito" element={<IncognitoDeviceInfoContent />} />
-            
+
             <Route path="find-bot" element={<BotDeviceInfoContent />} />
-            
+
             <Route path="find-ip" element={<FindMyIPInfoContent />} />
-            
+
             <Route path="find-email" element={<EmailLookup />} />
-            
-              <Route path="find-phone" element={<PhoneLookup />} />
-            
+
+            <Route path="find-phone" element={<PhoneLookup />} />
+
           </Routes>
         </div>
 

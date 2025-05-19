@@ -1,4 +1,4 @@
-import {useEffect,useState} from 'react'
+import { useEffect, useState } from 'react'
 
 import axios from 'axios';
 
@@ -9,10 +9,10 @@ import ".././designs/Lookup.css";
 
 const EmailLookup = () => {
   const [inputValue, setInputValue] = useState('');
-  
+
   const [userData, setUserData] = useState(null);
-  
-  const [valid,validCheck]=useState("");
+
+  const [valid, validCheck] = useState("");
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -22,7 +22,7 @@ const EmailLookup = () => {
     alert(inputValue)
     if (inputValue) {
       try {
-        if(!inputValue){
+        if (!inputValue) {
           validCheck("Email Should Not Empty")
           alert(valid);
           return
@@ -30,12 +30,12 @@ const EmailLookup = () => {
         const res = await axios.post("http://127.0.0.1:2408/api/admin/indcore/email-data", {
           email: inputValue,
         });
-      
-      
+
+
         setUserData(res.data)
         setInputValue('');
-        
-        
+
+
       } catch (error) {
         console.error("Error fetching email data:", error);
       }
@@ -44,10 +44,14 @@ const EmailLookup = () => {
 
   return (
     <div className="main">
+
       <div className="header">
         <h1 id="title" align="center">EMAIL VERIFICATION</h1>
       </div>
       <div className="container">
+        <img src="https://res.cloudinary.com/dfgwcxpwt/image/upload/v1747489184/upscalemedia-transformed_ek25pa.png" align="center">
+        </img><br>
+        </br>
         <input
           type="text"
           name="inputEmail"
@@ -58,37 +62,37 @@ const EmailLookup = () => {
         />
         <br /><br />
         <button name="checkEmail" id="sub-button" onClick={inputData}>Verify</button>
-        
-        <p>{valid}</p>
-        
-<div id="data">
-  {userData?.data?.emailRequestId && (
-    Object.entries(userData.data).map(([key, value]) => (
-      <div key={key}>
-        {typeof value === 'object' && value !== null ? (
-        
-          <ul>
-              <p id="lookupKey">{`${key}:`}</p>
-            {Object.entries(value).map(([subKey, subValue]) => (
-             
-              <li key={subKey}>
-                <span id="value-key">                {`${subKey}`}: </span>
-                <span id="value-field">
-                  {`${subValue}`}
-                </span>
-</li>
 
-            ))}
-          </ul>
-        ) :
-        
-        (
-          <p><span id="keys">{`${key}`} :</span> {`${value}`}</p>
-        )}
-      </div>
-    ))
-  )}
-</div>
+        <p>{valid}</p>
+
+        <div id="data">
+          {userData?.data?.emailRequestId && (
+            Object.entries(userData.data).map(([key, value]) => (
+              <div key={key}>
+                {typeof value === 'object' && value !== null ? (
+
+                  <ul>
+                    <p id="lookupKey">{`${key}:`}</p>
+                    {Object.entries(value).map(([subKey, subValue]) => (
+
+                      <li key={subKey}>
+                        <span id="value-key">{`${subKey}`}: </span>
+                        <span id="value-field">
+                          {`${subValue}`}
+                        </span>
+                      </li>
+
+                    ))}
+                  </ul>
+                ) :
+
+                  (
+                    <p><span id="keys">{`${key}`} :</span> {`${value}`}</p>
+                  )}
+              </div>
+            ))
+          )}
+        </div>
 
 
 
