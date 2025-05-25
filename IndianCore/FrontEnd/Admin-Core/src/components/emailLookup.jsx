@@ -61,7 +61,7 @@ const EmailLookup = () => {
           placeholder="ENTER THE EMAIL"
         />
         <br /><br />
-        <button name="checkEmail" id="sub-button" onClick={inputData}>Verify</button>
+        <button name="checkEmail" id="sub-button" onClick={inputData}>Click To Verify</button>
 
         <p>{valid}</p>
 

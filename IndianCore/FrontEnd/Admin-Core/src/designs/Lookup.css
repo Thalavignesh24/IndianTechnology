@@ -1,6 +1,6 @@
 #title {
-  color:orange;
-  font-family: "Monospace";
+  color: red;
+  font-family: "Lucida Console", "Courier New", monospace;
   font-size: 50px;
   padding: 10px;
   border-bottom: 10px solid #ccc;
@@ -9,17 +9,18 @@
 
 #input-box {
   margin-top: -180%;
-  margin-left: 30%;
+  margin-left: 28%;
   width: 50%;
-  border: 1px solid #ccc;
-  padding: 25px 20px;
-  border-radius: 4px;
+  border: 5px solid gainsboro;
+  padding: 20px 20px;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
   box-sizing: border-box;
   font-weight: bold;
+  font-size: 23px;
 }
 
 
@@ -27,19 +28,19 @@
   background-color: #04AA6D;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 20px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
- 
+  font-size: 23px;
   cursor: pointer;
-  margin-left: 52%;
-  border-radius: 4px;
+  margin-left: 28%;
+  border-radius: 10px;
   font-weight: bold;
+  width: 50%;
 }
 
-/*
+
 #lookupKey {
   margin-left: -13%;
   font-weight: bold;
@@ -80,12 +81,26 @@
 }
 
 body {
-  background-color: grey;
   font-family: "Monospace";
-} */
+}
+
+#code {
+  margin-left: 28%;
+  width: 50%;
+  border: 5px solid gainsboro;
+  padding: 20px 20px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 23px;
+}
 
 
-body {
+/* body {
   background-image: url(
 "https://res.cloudinary.com/dfgwcxpwt/image/upload/v1747486137/email_background_uaqrna.jpg"
   );
@@ -95,12 +110,10 @@ body {
   background-repeat: no-repeat;
   width: '100vw';
   height: '100vh'
-}
+} */
 
-body{
-  background-color: lavenderblush;
-}
+
 img {
-  width: 40%;
-  margin-left: 35%;
+  width: 30%;
+  margin-left: 38%;
 }
