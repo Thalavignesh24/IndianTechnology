@@ -14,8 +14,8 @@ function App() {
       <Routes>
         <Route path="main" element={<MainContent />} />
         <Route path="home" element={<HomeContent />} />
-        <Route path="device" element={<HeaderContent/>} />
-      
+        <Route path="device" element={<HeaderContent />} />
+
       </Routes>
     </div>
   );
