@@ -117,3 +117,9 @@ img {
   width: 30%;
   margin-left: 38%;
 }
+
+#validErrMsg{
+  margin-left: 5%;
+  font-size: 23px;
+  color:red
+}
