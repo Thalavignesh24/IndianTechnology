@@ -10,7 +10,7 @@ import ".././designs/Lookup.css";
 const EmailLookup = () => {
   const [inputValue, setInputValue] = useState('');
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState('');
 
   const [valid, validCheck] = useState("");
 
@@ -19,22 +19,19 @@ const EmailLookup = () => {
   };
 
   const inputData = async () => {
-    alert(inputValue)
+    if (!inputValue) {
+      validCheck("Please Enter Your Email")
+    }
     if (inputValue) {
       try {
-        if (!inputValue) {
-          validCheck("Email Should Not Empty")
-          alert(valid);
-          return
-        }
         const res = await axios.post("http://127.0.0.1:2408/api/admin/indcore/email-data", {
           email: inputValue,
         });
-
-
+        if (res.data.data.code === 422) {
+          validCheck("Please Enter The Valid Email")
+        }
         setUserData(res.data)
         setInputValue('');
-
 
       } catch (error) {
         console.error("Error fetching email data:", error);
@@ -48,6 +45,7 @@ const EmailLookup = () => {
       <div className="header">
         <h1 id="title" align="center">EMAIL VERIFICATION</h1>
       </div>
+
       <div className="container">
         <img src="https://res.cloudinary.com/dfgwcxpwt/image/upload/v1747489184/upscalemedia-transformed_ek25pa.png" align="center">
         </img><br>
@@ -60,38 +58,21 @@ const EmailLookup = () => {
           onChange={handleChange}
           placeholder="ENTER THE EMAIL"
         />
-        <br /><br />
+        <p id="validErrMsg" align="center">
+          {
+            valid
+          }
+        </p>
         <button name="checkEmail" id="sub-button" onClick={inputData}>Click To Verify</button>
 
-        <p>{valid}</p>
+
 
         <div id="data">
-          {userData?.data?.emailRequestId && (
-            Object.entries(userData.data).map(([key, value]) => (
-              <div key={key}>
-                {typeof value === 'object' && value !== null ? (
-
-                  <ul>
-                    <p id="lookupKey">{`${key}:`}</p>
-                    {Object.entries(value).map(([subKey, subValue]) => (
-
-                      <li key={subKey}>
-                        <span id="value-key">{`${subKey}`}: </span>
-                        <span id="value-field">
-                          {`${subValue}`}
-                        </span>
-                      </li>
-
-                    ))}
-                  </ul>
-                ) :
-
-                  (
-                    <p><span id="keys">{`${key}`} :</span> {`${value}`}</p>
-                  )}
-              </div>
-            ))
-          )}
+          <h4>
+            {
+              //(userData?.data?.code === 422) ? alert(userData?.data?.["message"]) : ""
+            }
+          </h4>
         </div>
 
 
