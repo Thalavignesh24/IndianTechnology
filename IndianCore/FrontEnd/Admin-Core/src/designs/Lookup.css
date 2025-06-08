@@ -41,6 +41,29 @@
 }
 
 
+#reset-button {
+  background-color: #f2f5f4;
+  border: none;
+  color: black;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px;
+  cursor: pointer;
+  margin-left: 27%;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 50%;
+}
+
+/* #reset-button a {
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+} */
+
+
 #lookupKey {
   margin-left: -13%;
   font-weight: bold;
@@ -118,8 +141,25 @@ img {
   margin-left: 38%;
 }
 
-#validErrMsg{
+#validErrMsg {
   margin-left: 5%;
   font-size: 23px;
-  color:red
+  color: red;
+  font-weight: bold;
+}
+
+
+#tableContent {
+  background-color: #272822;
+  margin-left: 28%;
+  width: 50%;
+  font-size: 23px;
+  border-radius: 10px;
+  border-color: white;
+}
+
+#tableContent th {
+  color: aqua;
+  padding: 20px;
+  font-size: 25px;
 }
