@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 
 import Form from 'react-bootstrap/Form';
+import JSONPretty from 'react-json-pretty';
+import JSONPrettyMon from 'react-json-pretty/dist/monikai';
+
 
 import ".././designs/Lookup.css";
 
@@ -20,18 +23,22 @@ const EmailLookup = () => {
 
   const inputData = async () => {
     if (!inputValue) {
-      validCheck("Please Enter Your Email")
+      return validCheck("Please Enter Your Email")
     }
     if (inputValue) {
       try {
         const res = await axios.post("http://127.0.0.1:2408/api/admin/indcore/email-data", {
           email: inputValue,
         });
-        if (res.data.data.code === 422) {
-          validCheck("Please Enter The Valid Email")
+
+        if (res?.["data"]?.["code"] === 422) {
+          return validCheck("Please Enter The Valid Email")
+        } else {
+          setUserData(res.data)
+          setInputValue('');
+          validCheck("")
         }
-        setUserData(res.data)
-        setInputValue('');
+
 
       } catch (error) {
         console.error("Error fetching email data:", error);
@@ -64,15 +71,35 @@ const EmailLookup = () => {
           }
         </p>
         <button name="checkEmail" id="sub-button" onClick={inputData}>Click To Verify</button>
+        <br></br><br></br>
+        <a href="http://localhost:5173/ind-core/device/find-email" id="reset-button">Click To Refresh</a>
 
+
+        <br></br>
+        <br></br>
 
 
         <div id="data">
-          <h4>
+          <div id="data">
             {
-              //(userData?.data?.code === 422) ? alert(userData?.data?.["message"]) : ""
+              userData ? <h4>
+                <table id="tableContent">
+                  <th>
+                    Email Lookup Details
+                  </th>
+                  <tr>
+                    <td>
+                      <JSONPretty id="json-pretty" data={userData} theme={JSONPrettyMon}></JSONPretty>
+                    </td>
+                  </tr>
+
+                </table>
+
+              </h4> : ""
             }
-          </h4>
+
+
+          </div>
         </div>
 
 
