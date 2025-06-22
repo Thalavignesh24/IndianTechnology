@@ -1,8 +1,7 @@
-
 {
   "routes": [
     {
-      "src": "/ind-core/*",
+      "src": "/ind-core/(.*)",
       "dest": "/ind-core/index.html"
     }
   ]
