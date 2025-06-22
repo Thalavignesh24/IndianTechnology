@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ind-core">
       <Routes>
-        <Route path="/ind-core/*" element={<App />} />
-        <Route path="/ind-core/device/*" element={<DeviceInfo />} />
+        <Route path="/app/*" element={<App />} />
+        <Route path="/device/*" element={<DeviceInfo />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
