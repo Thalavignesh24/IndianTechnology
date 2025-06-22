@@ -1,0 +1,9 @@
+
+{
+  "routes": [
+    {
+      "src": "/ind-core/*",
+      "dest": "/ind-core/index.html"
+    }
+  ]
+}
